@@ -54,6 +54,32 @@ export const COURSE_CONTENT: Module[] = [
         ],
         visualType: 'none'
       }
+    ],
+    quiz: [
+      {
+        id: 'mod-a-q1',
+        question: 'What makes quantum computing fundamentally different from classical computing?',
+        options: [
+          'It simply runs the same logic gates at a higher clock speed',
+          'It uses qubits that can exist in superpositions instead of only 0 or 1',
+          'It stores data on hard disks instead of RAM',
+          'It only works at room temperature'
+        ],
+        correctIndex: 1,
+        explanation: 'Quantum computers use qubits that can be in superpositions and entangled, enabling new kinds of algorithms beyond faster classical gates.'
+      },
+      {
+        id: 'mod-a-q2',
+        question: 'Which of the following is a realistic application area for quantum computing?',
+        options: [
+          'Rendering 4K video faster in a browser',
+          'Improving Wi‑Fi signal strength',
+          'Simulating complex molecules for drug discovery',
+          'Replacing all cloud servers for web apps'
+        ],
+        correctIndex: 2,
+        explanation: 'Quantum computers are especially promising for simulating quantum systems like molecules, which are hard for classical computers.'
+      }
     ]
   },
   {
@@ -177,6 +203,44 @@ export const COURSE_CONTENT: Module[] = [
         ],
         visualType: 'bloch'
       }
+    ],
+    quiz: [
+      {
+        id: 'mod-b-q1',
+        question: 'In the double-slit experiment, why is the interference pattern surprising?',
+        options: [
+          'Because particles never hit the screen',
+          'Because single particles build up a wave-like pattern over time',
+          'Because the slits randomly open and close',
+          'Because the screen moves during the experiment'
+        ],
+        correctIndex: 1,
+        explanation: 'Even when fired one-by-one, particles form an interference pattern, revealing underlying wave-like behavior.'
+      },
+      {
+        id: 'mod-b-q2',
+        question: 'What does “measurement collapses the wavefunction” mean?',
+        options: [
+          'The particle physically shrinks',
+          'The probability distribution becomes a definite outcome when we observe it',
+          'The experiment stops working',
+          'The particle disappears permanently'
+        ],
+        correctIndex: 1,
+        explanation: 'Before measurement, a quantum state is a distribution over possibilities. Measurement yields a single outcome and destroys the previous superposition.'
+      },
+      {
+        id: 'mod-b-q3',
+        question: 'Entanglement is best described as:',
+        options: [
+          'Two particles orbiting each other like planets',
+          'A signal traveling faster than light',
+          'A shared quantum state where measuring one instantly determines the other',
+          'A classical radio communication channel'
+        ],
+        correctIndex: 2,
+        explanation: 'Entangled systems share a single quantum state; their outcomes are correlated beyond what classical variables can explain.'
+      }
     ]
   },
   {
@@ -260,6 +324,32 @@ export const COURSE_CONTENT: Module[] = [
           "Our nose might be a quantum spectrometer."
         ],
         visualType: 'none'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mod-bio-q1',
+        question: 'Why do scientists think quantum effects might play a role in photosynthesis?',
+        options: [
+          'Because plants operate at absolute zero',
+          'Because energy seems to explore many paths at once to find the most efficient route',
+          'Because photons never interact with plant molecules',
+          'Because chlorophyll is a superconductor'
+        ],
+        correctIndex: 1,
+        explanation: 'Quantum coherence could let excitations sample many paths simultaneously, increasing transport efficiency.'
+      },
+      {
+        id: 'mod-bio-q2',
+        question: 'The “chemical compass” hypothesis for bird navigation involves:',
+        options: [
+          'Tiny magnets implanted in the bird’s beak',
+          'Entangled electron spins in radical pairs affected by Earth’s magnetic field',
+          'GPS receivers embedded in bird feathers',
+          'Purely classical electrical currents in nerves'
+        ],
+        correctIndex: 1,
+        explanation: 'Radical pair models suggest entangled electron spins respond sensitively to weak magnetic fields, acting like a quantum compass.'
       }
     ]
   },

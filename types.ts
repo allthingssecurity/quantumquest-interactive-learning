@@ -12,13 +12,14 @@ export interface Module {
   id: string;
   title: string;
   slides: Slide[];
+  quiz?: QuizQuestion[];
 }
 
 export interface AppState {
   currentModuleIndex: number;
   currentSlideIndex: number;
   completedSlides: string[];
-  viewMode: 'course' | 'code';
+  viewMode: 'course' | 'code' | 'quiz';
   arMode: boolean; // New AR toggle state
 }
 
@@ -28,6 +29,14 @@ export interface CodeExample {
   title: string;
   description: string;
   code: string;
+}
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation?: string;
 }
 
 export enum GateType {
