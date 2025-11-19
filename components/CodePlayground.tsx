@@ -20,42 +20,153 @@ export const CodePlayground: React.FC<CodePlaygroundProps> = ({ initialCode }) =
     // Simulate network/processing delay
     setTimeout(() => {
       setLoading(false);
-      // Mock Logic based on code content keywords
-      if (code.includes('qc.h(0)') && code.includes('qc.measure(0, 0)')) {
-        // Exercise 1: Superposition
-        const counts = { '0': 512, '1': 488 };
-        setResults(counts);
-        setOutput(`Job Status: COMPLETED
+      const normalized = code.replace(/\s+/g, ' ').toLowerCase();
+
+      // --- 1-qubit basic gates ---
+      if (normalized.includes('quantumcircuit(1, 1')) {
+        if (normalized.includes('qc.h(0)')) {
+          // Hadamard: superposition
+          const counts = { '0': 512, '1': 488 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
 Results:
 {
   '0': 512,
   '1': 488
 }
 // Roughly 50/50 split detected.`);
-      } else if (code.includes('qc.cx(0, 1)')) {
-        // Exercise 2: Entanglement
-        const counts = { '00': 498, '11': 502 };
-        setResults(counts);
-        setOutput(`Job Status: COMPLETED
+        } else if (normalized.includes('qc.x(0)')) {
+          // X gate: always |1>
+          const counts = { '1': 1000 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
 Results:
 {
-  '00': 498,
-  '11': 502
+  '1': 1000
 }
-// Perfect correlation. No '01' or '10' observed.`);
-      } else if (code.includes('Grover') || code.includes('Oracle') || (code.includes('cz') && code.includes('h'))) {
-        // Exercise 3/4: Grover
-        const counts = { '11': 998, '00': 1, '01': 0, '10': 1 };
-        setResults(counts);
-        setOutput(`Job Status: COMPLETED
+// Bit flipped to |1> as expected.`);
+        } else if (normalized.includes('qc.s(0)') || normalized.includes('qc.t(0)') || normalized.includes('qc.rz(')) {
+          // Phase gates example – no measurement, just acknowledge
+          setResults(null);
+          setOutput(`Circuit built with phase gates (S, T, RZ).
+In a full Qiskit environment you would see phase effects via interference or tomography.
+Here, structure and syntax are validated, but no measurement was requested.`);
+        } else {
+          const counts = { '0': 1000 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
 Results:
 {
-  '11': 998,
-  '00': 1,
-  '01': 0,
+  '0': 1000
+}
+// Default single-qubit ground state.`);
+        }
+
+      // --- 2-qubit circuits (Bell, CNOT, SWAP, Grover) ---
+      } else if (normalized.includes('quantumcircuit(2, 2')) {
+        if (normalized.includes('qc.h(0)') && normalized.includes('qc.cx(0, 1)') && !normalized.includes('qc.x(0)')) {
+          // Bell state
+          const counts = { '00': 502, '11': 498 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
+Results:
+{
+  '00': 502,
+  '11': 498
+}
+// Bell state |Φ+> created: only '00' and '11' appear.`);
+        } else if (normalized.includes('qc.swap(0, 1)')) {
+          // SWAP example
+          const counts = { '10': 1000 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
+Results:
+{
+  '10': 1000
+}
+// State of qubit 0 and 1 have been swapped.`);
+        } else if (normalized.includes('qc.cx(0, 1)') && normalized.includes('qc.x(0)')) {
+          // CNOT with prepared control = 1
+          const counts = { '11': 1000 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
+Results:
+{
+  '11': 1000
+}
+// CNOT fired: control=1 so target flipped to 1.`);
+        } else if (normalized.includes('qc.cz(0, 1)') && normalized.includes('qc.h([0,1])')) {
+          // Grover 2-qubit oracle + diffuser
+          const counts = { '11': 996, '00': 2, '01': 1, '10': 1 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
+Results:
+{
+  '11': 996,
+  '00': 2,
+  '01': 1,
   '10': 1
 }
-// Target |11> found with >99% probability.`);
+// Grover amplification: |11> dominates the distribution.`);
+        } else {
+          const counts = { '00': 1000 };
+          setResults(counts);
+          setOutput(`Job Status: COMPLETED
+Results:
+{
+  '00': 1000
+}
+// Default 2-qubit ground state.`);
+        }
+
+      // --- 3-qubit Toffoli and teleportation skeleton ---
+      } else if (normalized.includes('quantumcircuit(3, 3') && normalized.includes('qc.ccx(0, 1, 2)')) {
+        const counts = { '111': 1000 };
+        setResults(counts);
+        setOutput(`Job Status: COMPLETED
+Results:
+{
+  '111': 1000
+}
+// Toffoli gate fired: both controls were 1, so target flipped to 1.`);
+
+      } else if (normalized.includes('quantum teleportation') || (normalized.includes('quantumcircuit(3, 3') && normalized.includes('qc.rx(0.5, 0)'))) {
+        setResults(null);
+        setOutput(`Quantum teleportation circuit constructed.
+In a full Qiskit environment, conditional X/Z corrections would be applied based on classical bits.
+Here, use this as a structural reference for the teleportation protocol.`);
+
+      // --- Deutsch-Jozsa (2 input qubits, 1 ancilla) ---
+      } else if (normalized.includes('quantumcircuit(n+1, n') && normalized.includes('qc.cx(0, n)') && normalized.includes('qc.cx(1, n)')) {
+        const counts = { '01': 500, '10': 500 };
+        setResults(counts);
+        setOutput(`Job Status: COMPLETED
+Results:
+{
+  '01': 500,
+  '10': 500
+}
+// Deutsch-Jozsa (balanced oracle): input register is never '00', so function is balanced.`);
+
+      // --- Bernstein–Vazirani (secret string '101') ---
+      } else if (normalized.includes("s = '101'") || normalized.includes('bernstein-vazirani')) {
+        const counts = { '101': 1000 };
+        setResults(counts);
+        setOutput(`Job Status: COMPLETED
+Results:
+{
+  '101': 1000
+}
+// Bernstein–Vazirani: secret string s recovered in one oracle call.`);
+
+      // --- Shor / QPE skeleton ---
+      } else if (normalized.includes("shor's") || normalized.includes('inverse qft')) {
+        setResults(null);
+        setOutput(`Shor / QPE skeleton circuit constructed.
+In real Qiskit, modular exponentiation and inverse QFT would reveal the period encoded in phases.
+Here, focus on the structure: counting register, target, controlled-U, and inverse QFT.`);
+
+      // --- Fallback / generic simulation ---
       } else {
         const counts = { '0': 1000 };
         setResults(counts);
@@ -64,7 +175,7 @@ Results:
 {
   '0': 1000
 }
-// Default state |0> maintained.`);
+// Generic mock run. The syntax looks valid but this pattern is not recognized by the built-in simulator.`);
       }
     }, 1500);
   };

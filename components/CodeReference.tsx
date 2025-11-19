@@ -20,7 +20,10 @@ export const CodeReference: React.FC = () => {
     <div className="max-w-7xl mx-auto p-6 lg:p-12 animate-fadeIn">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-green-400 mb-2 font-mono">{'<Code_Lab />'}</h1>
-        <p className="text-slate-400">Reference implementation for Qiskit. Copy, paste, and run in your local Jupyter environment.</p>
+        <p className="text-slate-400">
+          Reference implementation for Qiskit. You can copy-paste these into the Lab editor to run them directly in your browser,
+          or into a local Jupyter environment if you prefer.
+        </p>
       </div>
 
       {/* Categories */}
