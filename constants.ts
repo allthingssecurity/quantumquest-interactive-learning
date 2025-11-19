@@ -79,6 +79,42 @@ export const COURSE_CONTENT: Module[] = [
         ],
         correctIndex: 2,
         explanation: 'Quantum computers are especially promising for simulating quantum systems like molecules, which are hard for classical computers.'
+      },
+      {
+        id: 'mod-a-q3',
+        question: 'Why is quantum computing often described as a “big conceptual shift” rather than just an incremental improvement?',
+        options: [
+          'Because it uses larger servers in data centers',
+          'Because it is programmed in a different language than classical computers',
+          'Because it relies on quantum mechanics with probabilistic states instead of deterministic bits',
+          'Because it replaces CPUs with GPUs'
+        ],
+        correctIndex: 2,
+        explanation: 'Quantum computation leverages superposition, interference and entanglement, which changes how we think about information and algorithms.'
+      },
+      {
+        id: 'mod-a-q4',
+        question: 'Which field is LEAST likely to be transformed by quantum computing according to the introduction?',
+        options: [
+          'Drug discovery',
+          'Large-scale financial optimization',
+          'Classical web page layout rendering',
+          'Cryptography and secure communication'
+        ],
+        correctIndex: 2,
+        explanation: 'The intro highlights chemistry, finance and cryptography; rendering web pages is a classical graphics/UX task.'
+      },
+      {
+        id: 'mod-a-q5',
+        question: 'From a learning perspective, what is the key requirement emphasized in Module A to start your quantum journey?',
+        options: [
+          'A PhD in physics',
+          'A deep background in abstract algebra',
+          'Access to a physical quantum computer',
+          'Curiosity and willingness to build intuition'
+        ],
+        correctIndex: 3,
+        explanation: 'The course stresses that you do not need a PhD—curiosity and intuition-building are enough to begin.'
       }
     ]
   },
@@ -240,6 +276,30 @@ export const COURSE_CONTENT: Module[] = [
         ],
         correctIndex: 2,
         explanation: 'Entangled systems share a single quantum state; their outcomes are correlated beyond what classical variables can explain.'
+      },
+      {
+        id: 'mod-b-q4',
+        question: 'Which statement about superposition is most accurate?',
+        options: [
+          'A qubit in superposition is rapidly switching between 0 and 1',
+          'A qubit in superposition has a well-defined hidden value we cannot see',
+          'A qubit in superposition is described by a combination of basis states with amplitudes',
+          'Superposition only exists in thought experiments, not in real systems'
+        ],
+        correctIndex: 2,
+        explanation: 'Mathematically, superposition is a linear combination of basis states with complex amplitudes; measurement samples from the resulting probabilities.'
+      },
+      {
+        id: 'mod-b-q5',
+        question: 'What role does phase play in quantum interference?',
+        options: [
+          'It only changes the color of photons',
+          'It determines whether amplitudes add or cancel, affecting probabilities',
+          'It controls the temperature of the quantum device',
+          'It is only relevant in classical wave theory, not quantum mechanics'
+        ],
+        correctIndex: 1,
+        explanation: 'Relative phases between components of a superposition determine whether paths interfere constructively or destructively.'
       }
     ]
   },
@@ -350,6 +410,42 @@ export const COURSE_CONTENT: Module[] = [
         ],
         correctIndex: 1,
         explanation: 'Radical pair models suggest entangled electron spins respond sensitively to weak magnetic fields, acting like a quantum compass.'
+      },
+      {
+        id: 'mod-bio-q3',
+        question: 'What challenge do warm, wet biological environments pose for quantum effects?',
+        options: [
+          'They perfectly preserve coherence indefinitely',
+          'They introduce noise and decoherence that usually destroy fragile quantum states',
+          'They prevent any interaction between molecules',
+          'They stop tunneling from occurring'
+        ],
+        correctIndex: 1,
+        explanation: 'Thermal noise and interactions normally destroy coherence quickly; seeing quantum effects in biology is therefore surprising and interesting.'
+      },
+      {
+        id: 'mod-bio-q4',
+        question: 'Quantum tunneling in enzymes helps explain:',
+        options: [
+          'Why enzymes are poor catalysts at body temperature',
+          'How protons can effectively “teleport” through energy barriers and speed up reactions',
+          'Why chemical reactions never complete',
+          'Why enzymes only work at absolute zero'
+        ],
+        correctIndex: 1,
+        explanation: 'Tunneling allows particles to traverse classically forbidden barriers, increasing reaction rates beyond classical expectations.'
+      },
+      {
+        id: 'mod-bio-q5',
+        question: 'Quantum olfaction suggests our sense of smell may depend on:',
+        options: [
+          'Only the macroscopic shape of molecules',
+          'The color of light absorbed by molecules',
+          'The vibrational frequencies of molecules and electron tunneling',
+          'The electric charge of the entire body'
+        ],
+        correctIndex: 2,
+        explanation: 'In vibration theory, electrons tunnel when molecular vibrations match certain frequencies, giving smell a quantum flavor.'
       }
     ]
   },
@@ -450,6 +546,68 @@ export const COURSE_CONTENT: Module[] = [
         ],
         visualType: 'none'
       }
+    ],
+    quiz: [
+      {
+        id: 'mod-hw-q1',
+        question: 'Why do superconducting qubits need to be cooled to extremely low temperatures?',
+        options: [
+          'To make the chip physically smaller',
+          'To reduce thermal noise and preserve fragile quantum states',
+          'To increase the voltage of classical control signals',
+          'To prevent photons from escaping the chip'
+        ],
+        correctIndex: 1,
+        explanation: 'Millikelvin temperatures suppress thermal excitations that would otherwise quickly decohere superconducting qubits.'
+      },
+      {
+        id: 'mod-hw-q2',
+        question: 'Which hardware platform uses individual atoms held in place by electric fields?',
+        options: [
+          'Superconducting qubits',
+          'Photonic quantum computers',
+          'Trapped ions',
+          'Topological qubits'
+        ],
+        correctIndex: 2,
+        explanation: 'Trapped ion systems confine single ions in vacuum using electromagnetic fields and manipulate them with lasers.'
+      },
+      {
+        id: 'mod-hw-q3',
+        question: 'What is the main advantage of photonic quantum computing highlighted in the module?',
+        options: [
+          'It requires dilution refrigerators',
+          'It works at room temperature',
+          'It uses electrons instead of photons',
+          'It does not require error correction'
+        ],
+        correctIndex: 1,
+        explanation: 'Photonic approaches can operate at or near room temperature, but two-qubit interactions are challenging.'
+      },
+      {
+        id: 'mod-hw-q4',
+        question: '“Decoherence” refers to:',
+        options: [
+          'The process of cooling qubits',
+          'The loss of quantum behavior due to interaction with the environment',
+          'The act of measuring a classical bit',
+          'The reversal of a quantum gate'
+        ],
+        correctIndex: 1,
+        explanation: 'Decoherence occurs when a quantum system leaks information to its environment and behaves more classically.'
+      },
+      {
+        id: 'mod-hw-q5',
+        question: 'Why do we talk about “physical” versus “logical” qubits?',
+        options: [
+          'Logical qubits are simulated on laptops, physical qubits are on phones',
+          'Logical qubits are purely mathematical, physical ones are imaginary',
+          'Many noisy physical qubits are combined to encode one error-corrected logical qubit',
+          'Logical qubits only appear in software documentation'
+        ],
+        correctIndex: 2,
+        explanation: 'Quantum error correction uses multiple physical qubits to redundantly encode a single more stable logical qubit.'
+      }
     ]
   },
   {
@@ -500,6 +658,68 @@ export const COURSE_CONTENT: Module[] = [
           "They solve specific subset (BQP) exponentially faster."
         ],
         visualType: 'none'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mod-logic-q1',
+        question: 'In classical computing, a bit is best described as:',
+        options: [
+          'A continuous value between 0 and 1',
+          'A quantum state with infinite possibilities',
+          'A unit of information that is either 0 or 1',
+          'A physical wire on a chip'
+        ],
+        correctIndex: 2,
+        explanation: 'At the logical level, a bit is a binary variable taking values 0 or 1.'
+      },
+      {
+        id: 'mod-logic-q2',
+        question: 'Why must quantum computation be reversible?',
+        options: [
+          'Because it uses only mechanical switches',
+          'Because quantum evolution is unitary and preserves information',
+          'Because it is easier to implement in hardware',
+          'Because it avoids using electricity'
+        ],
+        correctIndex: 1,
+        explanation: 'Quantum dynamics are reversible (unitary), so valid quantum gates must be invertible operations that do not erase information.'
+      },
+      {
+        id: 'mod-logic-q3',
+        question: 'Which informal description of complexity classes is most accurate?',
+        options: [
+          'P: problems impossible to solve, NP: trivial problems',
+          'P: solved quickly, NP: verifiable quickly but may be hard to solve',
+          'P and NP are identical classes',
+          'NP problems are always easy for quantum computers'
+        ],
+        correctIndex: 1,
+        explanation: 'P are efficiently solvable; NP problems have solutions that can be checked quickly, but may be hard to find.'
+      },
+      {
+        id: 'mod-logic-q4',
+        question: 'What does BQP represent in the context of quantum computing?',
+        options: [
+          'All problems quantum computers can solve instantly',
+          'The class of problems efficiently solvable by a quantum computer',
+          'Only factoring and search problems',
+          'The set of all NP problems'
+        ],
+        correctIndex: 1,
+        explanation: 'BQP is the class of decision problems solvable in polynomial time with bounded error on a quantum computer.'
+      },
+      {
+        id: 'mod-logic-q5',
+        question: 'What is the role of logic gates in both classical and quantum computing?',
+        options: [
+          'They only provide power to the chip',
+          'They define how information is transformed step by step',
+          'They are purely decorative symbols',
+          'They store data permanently'
+        ],
+        correctIndex: 1,
+        explanation: 'Computation is structured as a sequence of elementary operations (gates) that transform the state of the system.'
       }
     ]
   },
@@ -627,6 +847,68 @@ export const COURSE_CONTENT: Module[] = [
         visualType: 'circuit',
         visualProps: { demo: 'simple' }
       }
+    ],
+    quiz: [
+      {
+        id: 'mod-gates-q1',
+        question: 'What does the Hadamard (H) gate do to the state |0⟩?',
+        options: [
+          'Leaves it unchanged',
+          'Flips it to |1⟩ with certainty',
+          'Creates an equal superposition (|0⟩ + |1⟩)/√2',
+          'Destroys the qubit'
+        ],
+        correctIndex: 2,
+        explanation: 'H maps |0⟩ to an equal superposition of |0⟩ and |1⟩, enabling interference-based algorithms.'
+      },
+      {
+        id: 'mod-gates-q2',
+        question: 'What is the main effect of the Z gate on a single qubit?',
+        options: [
+          'It flips |0⟩ to |1⟩',
+          'It swaps the amplitudes of |0⟩ and |1⟩',
+          'It changes the relative phase of |1⟩ while leaving probabilities unchanged',
+          'It measures the qubit'
+        ],
+        correctIndex: 2,
+        explanation: 'Z multiplies the |1⟩ component by -1, altering phase but not measurement probabilities.'
+      },
+      {
+        id: 'mod-gates-q3',
+        question: 'The CNOT gate acts as:',
+        options: [
+          'A single-qubit NOT gate',
+          'A controlled operation that flips the target qubit only when the control is 1',
+          'A measurement on both qubits',
+          'A swap between quantum and classical bits'
+        ],
+        correctIndex: 1,
+        explanation: 'CNOT is a two-qubit gate that conditionally flips the target, essential for entanglement.'
+      },
+      {
+        id: 'mod-gates-q4',
+        question: 'Which statement about S and T gates is correct?',
+        options: [
+          'They are both measurement operations',
+          'They are fractional phase rotations derived from the Z gate',
+          'They always flip |0⟩ to |1⟩',
+          'They remove entanglement from a circuit'
+        ],
+        correctIndex: 1,
+        explanation: 'S and T are smaller rotations around the Z axis (√Z and 4th-root-of-Z), used for fine-grained phase control.'
+      },
+      {
+        id: 'mod-gates-q5',
+        question: 'Why are circuit diagrams useful in quantum computing?',
+        options: [
+          'They show the physical layout of the lab equipment',
+          'They encode the temporal sequence of gates on qubits in a readable way',
+          'They are only used for marketing slides',
+          'They replace the need for math entirely'
+        ],
+        correctIndex: 1,
+        explanation: 'Diagrams show qubits as wires over time and gates as operations, providing a visual representation of the algorithm.'
+      }
     ]
   },
   {
@@ -722,6 +1004,68 @@ export const COURSE_CONTENT: Module[] = [
         ],
         visualType: 'none'
       }
+    ],
+    quiz: [
+      {
+        id: 'mod-algo-q1',
+        question: 'Deutsch’s algorithm demonstrates which key idea?',
+        options: [
+          'Using many classical queries to check a function',
+          'Using superposition to evaluate a function on multiple inputs at once',
+          'Simulating molecules on a quantum computer',
+          'Breaking RSA encryption directly'
+        ],
+        correctIndex: 1,
+        explanation: 'Deutsch’s algorithm is an early example of quantum parallelism: one query explores multiple inputs simultaneously.'
+      },
+      {
+        id: 'mod-algo-q2',
+        question: 'Grover’s algorithm provides a speedup for which type of problem?',
+        options: [
+          'Sorting a list',
+          'Searching an unstructured database',
+          'Computing matrix inverses',
+          'Factoring large integers'
+        ],
+        correctIndex: 1,
+        explanation: 'Grover’s algorithm accelerates unstructured search from O(N) to O(√N).'
+      },
+      {
+        id: 'mod-algo-q3',
+        question: 'What is the core breakthrough of Shor’s algorithm?',
+        options: [
+          'Solving linear equations',
+          'Finding shortest paths in graphs',
+          'Factoring large integers efficiently via period finding',
+          'Simulating classical chaotic systems'
+        ],
+        correctIndex: 2,
+        explanation: 'Shor reduces factoring to a quantum period-finding problem, giving an exponential speedup over the best known classical algorithms.'
+      },
+      {
+        id: 'mod-algo-q4',
+        question: 'Why are variational algorithms like VQE especially relevant today?',
+        options: [
+          'They require fully error-corrected, large-scale quantum computers',
+          'They are purely classical algorithms',
+          'They are designed for current noisy quantum devices by combining classical optimization with quantum measurements',
+          'They only work on perfect qubits at absolute zero'
+        ],
+        correctIndex: 2,
+        explanation: 'VQE and related methods are hybrid algorithms tailored to NISQ hardware, offloading optimization to classical machines.'
+      },
+      {
+        id: 'mod-algo-q5',
+        question: 'Why is Simon’s algorithm historically important?',
+        options: [
+          'It was the first algorithm to solve NP-complete problems',
+          'It provided one of the first proofs of an exponential quantum speedup over classical algorithms',
+          'It is the only algorithm that uses entanglement',
+          'It replaces all classical encryption schemes'
+        ],
+        correctIndex: 1,
+        explanation: 'Simon’s problem admits an exponential quantum speedup, giving strong evidence that quantum computers are fundamentally more powerful.'
+      }
     ]
   },
   {
@@ -770,6 +1114,68 @@ export const COURSE_CONTENT: Module[] = [
           "But the software is being written TODAY."
         ],
         visualType: 'none'
+      }
+    ],
+    quiz: [
+      {
+        id: 'mod-future-q1',
+        question: 'What is the main goal of a “quantum internet” as described in the module?',
+        options: [
+          'To make the classical internet faster than light',
+          'To provide perfectly secure communication using quantum states',
+          'To replace all fiber cables with wireless links',
+          'To stream quantum movies'
+        ],
+        correctIndex: 1,
+        explanation: 'A quantum internet uses entanglement and quantum key distribution to enable fundamentally secure communication, not faster-than-light signaling.'
+      },
+      {
+        id: 'mod-future-q2',
+        question: 'Quantum Key Distribution (QKD) is powerful because:',
+        options: [
+          'It hides messages using better math formulas',
+          'Any eavesdropping attempt irreversibly disturbs the quantum states, revealing an attacker',
+          'It relies on unbreakable classical codes',
+          'It uses satellites only'
+        ],
+        correctIndex: 1,
+        explanation: 'Measuring quantum states changes them, so eavesdropping can be detected by checking error rates in the key.'
+      },
+      {
+        id: 'mod-future-q3',
+        question: 'What does NISQ stand for?',
+        options: [
+          'Non‑Interactive Secure Quantum',
+          'Noisy Intermediate‑Scale Quantum',
+          'Non‑Ideal Superconducting Qubits',
+          'Next‑Iteration Super Quantum'
+        ],
+        correctIndex: 1,
+        explanation: 'NISQ describes today’s era: quantum devices with tens–thousands of noisy qubits, not yet fully error‑corrected.'
+      },
+      {
+        id: 'mod-future-q4',
+        question: 'Why are ethics discussed in the context of quantum computing?',
+        options: [
+          'Because quantum computers will make people immortal',
+          'Because breaking current encryption and creating new capabilities has societal impact',
+          'Because ethics determine the speed of quantum gates',
+          'Because ethics replace technical standards'
+        ],
+        correctIndex: 1,
+        explanation: 'Quantum tech can disrupt security, economics and power structures, so responsible deployment and equitable access matter.'
+      },
+      {
+        id: 'mod-future-q5',
+        question: 'According to the module, what is the opportunity for students learning quantum now?',
+        options: [
+          'The field is mature and fixed, so there is little room to contribute',
+          'They are early in a young field and can help shape it',
+          'Quantum computing will soon be obsolete',
+          'Only hardware companies can meaningfully influence the field'
+        ],
+        correctIndex: 1,
+        explanation: 'Because the field is still young, learners today can directly influence technology, applications and policy.'
       }
     ]
   },
